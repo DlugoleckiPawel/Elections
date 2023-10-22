@@ -58,6 +58,8 @@ public class TokenService {
             if (attemps >= 3) {
                 voterDto.setHasVoted(true);
                 voterRepository.save(VoterMapper.toEntity(voterDto));
+                // CR
+                attempsMap.remove(voterDto.getId());
                 throw new MaxAttemptReachedException();
             }
             throw new TokenNotFoundException();

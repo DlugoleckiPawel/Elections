@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +35,7 @@ public class ResultService {
 
         int totalVotesInConstituency = candidatesVotesMap.values().stream().mapToInt(Integer::intValue).sum();
 
-        List<CandidateResultDto> candidateResults = new java.util.ArrayList<>(candidatesVotesMap
+        List<CandidateResultDto> candidateResults = new ArrayList<>(candidatesVotesMap
                 .entrySet()
                 .stream()
                 .map(entry -> CandidateResultDto.builder()

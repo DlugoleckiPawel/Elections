@@ -9,43 +9,40 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="mb-4">Dodaj Kandydata</h1>
-    <form th:action="@{/candidates/add}" method="post" th:object="${candidate}">
-        <div class="form-group">
+    <h1 class="mb-4 text-center">Dodaj Kandydata</h1>
+    <form th:action="@{/candidates/add}" method="post" th:object="${candidate}" class="text-center">
+        <div class="form-group d-flex justify-content-center">
             <input type="text" th:field="*{name}" placeholder="Imię" class="form-control mb-4 col-4">
         </div>
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
             <input type="text" th:field="*{surname}" placeholder="Nazwisko" class="form-control mb-4 col-4">
         </div>
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
             <input type="date" th:field="*{birthday}" class="form-control mb-4 col-4">
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
             <select class="form-control mb-4 col-4" th:field="*{gender}">
-                <!-- Domyślna, pusta opcja -->
                 <option value="">Wybierz płeć</option>
-
-                <!-- Do wyboru -->
                 <option th:each="gender : ${genders}" th:value="${gender}" th:text="${gender}"></option>
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
             <select class="form-control mb-4 col-4" th:field="*{politicalPartyDto.id}">
                 <option value="">Wybierz partię</option>
                 <option th:each="party : ${politicalParties}" th:value="${party.id}" th:text="${party.name}"></option>
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
             <select class="form-control mb-4 col-4" th:field="*{constituencyDto.id}">
                 <option value="">Wybierz okręg wyborczy</option>
                 <option th:each="constituency : ${constituencies}" th:value="${constituency.id}" th:text="${constituency.name}"></option>
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
             <button class="btn btn-success" type="submit">Dodaj</button>
         </div>
 

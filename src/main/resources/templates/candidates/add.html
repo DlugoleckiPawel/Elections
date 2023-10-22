@@ -10,7 +10,7 @@
 <body>
 <div class="container mt-5">
     <h1 class="mb-4 text-center">Dodaj Kandydata</h1>
-    <form th:action="@{/candidates/add}" method="post" th:object="${candidate}" class="text-center">
+    <form  th:action="@{/candidates/add}" method="post" th:object="${candidate}" class="text-center">
         <div class="form-group d-flex justify-content-center">
             <input type="text" th:field="*{name}" placeholder="Imię" class="form-control mb-4 col-4">
         </div>
